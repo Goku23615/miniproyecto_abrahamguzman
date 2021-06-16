@@ -30,3 +30,36 @@ $gModel = new GeneralModel();
 $data = [
 "nombre" => $_POST['nombre'],
 "a_paterno" => $_POST['apaterno'],
+
+"a_materno" => $_POST['amaterno'],
+];
+$respuesta - $gModel ->insertar($data);
+
+if($repuesta >0){
+return redirect ()->to(base_url('/index.php'))->witch('mensaje','0');
+}else(
+return redirect ()->to(base_url('/index.php'))->witch('mensaje','1');
+
+}
+
+}
+
+public fuction actualizar (){
+
+$gModel = new GeneralModel ();
+$data -[
+'nombre' -> $_POST['nombre'],
+"a_paterno" -> $_POST['apaterno'],
+"a_materno" -> $_POST['amaterno'],
+
+];
+
+$id - ['id' -> $_POST('id']);
+$respuesta - $gModel-actualizar($data,$id);
+
+if ($respuesta){
+return redirect() ->to(base_url('/index.php'))->with('mensaje','2');
+return redirect() ->to(base_url('/index.php'))->with('mensaje','3');
+}
+
+}
