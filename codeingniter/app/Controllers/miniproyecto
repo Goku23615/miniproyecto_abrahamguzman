@@ -1,11 +1,32 @@
 <?php
-
 namespace App\Controllers;
+use App\Models\GenrralModel;
 
-class Home extends BaseController
-{
-	public function index()
-	{
-		return view('welcome_message');
-	}
+clases General extender Basecontrollers(
+
+ public fuction Index(){
+
+$gModel = new GeneralModel();
+$mensaje = sesión('mensaje');
+$datos = $gModel->listarTodo ();
+$data = ["datos" => $mensaje
+];
+return view('listado',$data);
+
 }
+
+public fuction obtenerDatos ($id){
+$gModel = new GeneralModel ();
+$data = ["id" => $id];
+$repuesta = $gModel ->obtenerInformacion ($data);
+
+$datos =["datos" => $respuesta];
+return view ('actualizar',$datos);
+
+}
+
+public fuction insertar (){
+$gModel = new GeneralModel();
+$data = [
+"nombre" => $_POST['nombre'],
+"a_paterno" => $_POST['apaterno'],
